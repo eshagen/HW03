@@ -6,7 +6,13 @@
 ################################################################################
 # Exercise 1
 # When you submit only include your final function: compare
-
+def compare(x, y):
+    if (x > y):
+        return 1
+    elif (x == y):
+        return 0
+    else:
+        return -1
 
 
 
@@ -16,7 +22,12 @@
 # When you submit only include your final function: hypotenuse
 # Do develop incrementally. Do not share here.
 
+import math
 
+def hypotenuse(a, b):
+    csquared = float((a * a) + (b * b))
+    c = math.sqrt(csquared)
+    return c
 
 
 
@@ -24,7 +35,11 @@
 # Exercise 3
 # When you submit only include your final function: is_between
 
-
+def is_between(x, y, z):
+    if(x <= y and y <= z):
+        return True
+    else:
+        return False
 
 
 
@@ -32,7 +47,24 @@
 # Exercise 6
 # When you submit only include your final function: is_palindrome
 
+def is_palindrome(s):
+    string_length = len(s)
+    if(string_length <= 1):
+        return True
+    if(first(s) != last(s)):
+        return False
+    return is_palindrome(middle(s))
 
+
+
+def first(word):
+    return word[0]
+
+def last(word):
+    return word[-1]
+
+def middle(word):
+    return word[1:-1]
 
 
 
@@ -40,6 +72,16 @@
 # Exercise 7
 # When you submit only include your final function: is_power
 
+def is_power(a, b):
+    if(a == b):
+        return True
+    if(a % b != 0):
+        return False
+    if(is_power((a/float(b)), b)):
+        return True
+    else:
+        return False
+    
 
 
 
@@ -49,12 +91,9 @@ def main():
     """Your functions will be called within this function."""
     ############################################################################
     # Use this space temporarily to call functions in development:
-    print("Hello World!")
-
-
-
-
-
+ 
+    
+    
 
 
     ############################################################################
@@ -82,7 +121,7 @@ def main():
     print is_power(27,3)
     print is_power(248832,12)
     print is_power(248844,12)
-
+    
 
 if __name__ == "__main__":
     main()
